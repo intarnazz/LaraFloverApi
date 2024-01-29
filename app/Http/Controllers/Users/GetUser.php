@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
 
-use App\Models\User;
+namespace App\Http\Controllers\Users;
+
+use App\Http\Controllers\Controller;
+use App\Models\Users\user;
 use Illuminate\Http\Request;
 
 class GetUser extends Controller
 {
     public function index()
     {
-        $users = User::all(['id', 'login', 'password']);
+        $users = user::all(['id', 'name', 'password']);
         $res = [];
         foreach ($users as $value) {
             $res[$value["id"]] = [
-                "login" => $value["login"],
+                "name" => $value["name"],
                 "password" => $value["password"],
             ];
         }

@@ -17,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ControllersFlovers\Get\Flovers;
 
+use App\Http\Controllers\Users\GetUser;
+
 
 
 Route::get('/GetFlovers', [Flovers::class, 'floversAll']);
 
 Route::get('/GetFloverImage/{name}', [Flovers::class, 'floverImage']);
+
+Route::get('/GetUser', [GetUser::class, 'index']);
+
+
 
