@@ -12,12 +12,13 @@ class Flovers extends Controller
 {
     public function floversAll()
     {
-        $flovers = Flover::all(['id', 'name', 'price',]);
+        $flovers = Flover::all(['id', 'name', 'price', 'file_name']);
         $res = [];
         foreach ($flovers as $flover) {
             $res[$flover['id']] = [
                 'name' => $flover['name'],
                 'price' => $flover['price'],
+                'file_name' => $flover['file_name'],
             ];
         }
         return response()->json($res);
